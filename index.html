@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
-  <link rel="stylesheet" href="styles.css?v=6.2">
+  <link rel="stylesheet" href="styles.css?v=6.5">
 </head>
 <body>
 <main class="app" id="app">
@@ -115,7 +115,21 @@
         <img class="garden-bg" id="gardenBg" alt="" src="assets/garden/garden-world-v51.png">
         <div class="season-layer" aria-hidden="true"></div>
         <div id="gardenItems"></div>
-        <p class="drag-hint" id="dragHint" hidden><span aria-hidden="true">✋</span> Drag to move</p>
+        <div class="growth-tools" id="growthTools" hidden aria-label="Plant care">
+          <span><b id="growthStep">Step 1 of 3</b><small id="growthPrompt">Your seed is ready</small></span>
+          <button class="btn btn-primary growth-action" id="growthAction" type="button">🌱 Plant</button>
+        </div>
+        <div class="item-tools" id="itemTools" hidden aria-label="Selected garden item controls">
+          <span id="itemToolsName"></span>
+          <div class="item-resize" role="group" aria-label="Resize selected item">
+            <button class="item-tool item-tool-compact" id="smallerItem" type="button" aria-label="Make item smaller">−</button>
+            <output id="itemSizeLabel" aria-live="polite">100%</output>
+            <button class="item-tool item-tool-compact" id="largerItem" type="button" aria-label="Make item larger">＋</button>
+          </div>
+          <button class="item-tool" id="rotateItem" type="button"><span aria-hidden="true">↻</span> Rotate</button>
+          <button class="item-tool item-tool-delete" id="deleteItem" type="button"><span aria-hidden="true">×</span> Delete</button>
+        </div>
+        <p class="drag-hint" id="dragHint" hidden><span aria-hidden="true">✋</span> Drag to move · tap for tools</p>
         <p class="garden-empty" id="gardenEmpty" hidden>Your garden is ready for its first plant 🌱</p>
       </div>
     </div>
@@ -160,6 +174,6 @@
 
   <div class="toast" id="toast" role="status" hidden></div>
 </main>
-<script src="app.js?v=6.2"></script>
+<script src="app.js?v=6.4"></script>
 </body>
 </html>

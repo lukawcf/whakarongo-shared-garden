@@ -56,18 +56,26 @@ const ITEM_IMG = id => `assets/garden/items/${id}.png`;
 const SEASONS = {
   // Summer: a sunny lawn that fills up with plants and flowers.
   summer: {bg: 'assets/garden/garden-world-v51.png', ratio: 1586 / 992, items: [
-    {id: 'pohutukawa', name: 'Pōhutukawa', cost: 60, x: 86, y: 66, w: 24},
-    {id: 'harakeke', name: 'Harakeke', cost: 40, x: 64, y: 51, w: 12},
-    {id: 'lavender', name: 'Lavender', cost: 30, x: 45, y: 52, w: 12},
-    {id: 'birdbath', name: 'Birdbath', cost: 45, x: 29, y: 57, w: 10},
-    {id: 'sunflower', name: 'Sunflower', cost: 30, x: 14, y: 60, w: 11},
-    {id: 'kumara', name: 'Kūmara', cost: 25, x: 24, y: 76, w: 13},
+    {id: 'pohutukawa', name: 'Pōhutukawa', cost: 60, x: 86, y: 66, w: 24, grows: true},
+    {id: 'harakeke', name: 'Harakeke', cost: 40, x: 64, y: 51, w: 12, grows: true},
+    {id: 'lavender', asset: 'manuka', name: 'Mānuka', cost: 30, x: 45, y: 52, w: 12, grows: true},
+    {id: 'birdbath', asset: 'tui', name: 'Tūī', cost: 45, x: 29, y: 39, w: 6.5, flying: true},
+    {id: 'sunflower', asset: 'southern-rata', name: 'Southern rātā', cost: 30, x: 14, y: 64, w: 15, grows: true},
+    {id: 'kumara', name: 'Kūmara', cost: 25, x: 24, y: 76, w: 13, grows: true},
     {id: 'flower-pot', name: 'Flower pot', cost: 20, x: 49, y: 71, w: 9},
-    {id: 'roses', name: 'Roses', cost: 35, x: 68, y: 76, w: 13},
-    {id: 'daisies', name: 'Daisies', cost: 20, x: 14, y: 95, w: 15},
-    {id: 'tomatoes', name: 'Tomatoes', cost: 30, x: 38, y: 90, w: 13},
-    {id: 'wildflowers', name: 'Wildflowers', cost: 25, x: 60, y: 94, w: 17},
-    {id: 'butterfly', name: 'Butterfly', cost: 15, x: 52, y: 30, w: 7, flying: true}
+    {id: 'roses', asset: 'kakabeak', name: 'Kākābeak', cost: 35, x: 68, y: 76, w: 13, grows: true},
+    {id: 'daisies', asset: 'mount-cook-buttercup', name: 'Mount Cook buttercup', cost: 20, x: 14, y: 95, w: 15, grows: true},
+    {id: 'tomatoes', name: 'Tomatoes', cost: 30, x: 38, y: 90, w: 13, grows: true},
+    {id: 'wildflowers', asset: 'koromiko', name: 'Koromiko', cost: 25, x: 60, y: 94, w: 17, grows: true},
+    {id: 'butterfly', asset: 'kahukura', name: 'Kahukura butterfly', cost: 15, x: 52, y: 30, w: 4.5, flying: true},
+    {id: 'ti-kouka', name: 'Tī kōuka', cost: 50, x: 8, y: 58, w: 18, grows: true},
+    {id: 'nikau', name: 'Nīkau palm', cost: 55, x: 77, y: 65, w: 19, grows: true},
+    {id: 'kauri', name: 'Kauri', cost: 60, x: 91, y: 49, w: 21, grows: true},
+    {id: 'rengarenga', name: 'Rengarenga', cost: 25, x: 31, y: 93, w: 12, grows: true},
+    {id: 'kereru', name: 'Kererū', cost: 40, x: 73, y: 31, w: 6, flying: true},
+    {id: 'korimako', name: 'Korimako', cost: 35, x: 39, y: 36, w: 5, flying: true},
+    {id: 'monarch', name: 'Monarch butterfly', cost: 15, x: 63, y: 27, w: 4, flying: true},
+    {id: 'puriri-moth', name: 'Pūriri moth', cost: 15, x: 18, y: 34, w: 4, flying: true}
   ]},
   // Winter: a frosty backyard made cosy with a fire, seats and warm light.
   winter: {bg: 'assets/garden/garden-winter-v1.jpg', ratio: 1672 / 941, items: [
@@ -76,13 +84,21 @@ const SEASONS = {
     {id: 'bench', name: 'Bench', cost: 45, x: 67, y: 60, w: 14},
     {id: 'lantern', name: 'Lantern', cost: 25, x: 79, y: 80, w: 6},
     {id: 'firewood', name: 'Firewood', cost: 20, x: 17, y: 60, w: 12},
-    {id: 'kowhai', name: 'Kōwhai', cost: 55, x: 89, y: 54, w: 19},
-    {id: 'ponga', name: 'Ponga', cost: 45, x: 8, y: 74, w: 16},
-    {id: 'winter-shrub', name: 'Winter flowers', cost: 30, x: 76, y: 46, w: 10},
-    {id: 'tussock', name: 'Tussock', cost: 20, x: 27, y: 94, w: 12},
-    {id: 'carrots', name: 'Carrots', cost: 20, x: 42, y: 98, w: 11},
+    {id: 'kowhai', name: 'Kōwhai', cost: 55, x: 89, y: 54, w: 19, grows: true},
+    {id: 'ponga', name: 'Ponga / silver fern', cost: 45, x: 8, y: 74, w: 16, grows: true},
+    {id: 'winter-shrub', asset: 'mount-cook-buttercup', name: 'Mount Cook buttercup', cost: 30, x: 76, y: 46, w: 10, grows: true},
+    {id: 'tussock', name: 'Tussock', cost: 20, x: 27, y: 94, w: 12, grows: true},
+    {id: 'carrots', name: 'Carrots', cost: 20, x: 42, y: 98, w: 11, grows: true},
     {id: 'stones', name: 'River stones', cost: 15, x: 64, y: 95, w: 12},
-    {id: 'piwakawaka', name: 'Pīwakawaka', cost: 35, x: 47, y: 37, w: 7, flying: true}
+    {id: 'piwakawaka', name: 'Pīwakawaka', cost: 35, x: 47, y: 37, w: 5, flying: true},
+    {id: 'snowman', name: 'Snowman', cost: 35, x: 88, y: 96, w: 15},
+    {id: 'snow-angel', name: 'Snow angel', cost: 20, x: 52, y: 99, w: 18},
+    {id: 'snowflake', name: 'Snowflake', cost: 15, x: 22, y: 36, w: 8, flying: true},
+    {id: 'snowballs', name: 'Snowballs', cost: 15, x: 76, y: 99, w: 11},
+    {id: 'rimu', name: 'Rimu', cost: 60, x: 93, y: 50, w: 20, grows: true},
+    {id: 'totara', name: 'Tōtara', cost: 55, x: 7, y: 59, w: 18, grows: true},
+    {id: 'toetoe', name: 'Toetoe', cost: 30, x: 19, y: 94, w: 13, grows: true},
+    {id: 'coprosma', name: 'Karamū / coprosma', cost: 30, x: 84, y: 90, w: 12, grows: true}
   ]}
 };
 
@@ -91,13 +107,30 @@ const STORE_KEY = 'sharedGardenV4';
 const today = () => new Date().toLocaleDateString('en-CA'); // local YYYY-MM-DD
 function loadSave() {
   // camera: null = not asked yet, 'on' | 'off'; places: where the player moved each garden item
-  const fresh = {tokens: 40, unlocked: [], lastDay: null, camera: null, places: {}, movedOnce: false};
-  try { return {...fresh, ...JSON.parse(localStorage.getItem(STORE_KEY))}; } catch { return fresh; }
+  const fresh = {tokens: 40, unlocked: [], lastDay: null, camera: null, places: {}, gardenItems: [], nextGardenId: 1, movedOnce: false};
+  let loaded;
+  try { loaded = {...fresh, ...JSON.parse(localStorage.getItem(STORE_KEY))}; } catch { return fresh; }
+  if (!Array.isArray(loaded.gardenItems)) loaded.gardenItems = [];
+  // Bring existing one-of-each gardens into the new repeatable-item format without losing anything.
+  if (!loaded.gardenItems.length && Array.isArray(loaded.unlocked)) {
+    Object.entries(SEASONS).forEach(([savedSeason, details]) => {
+      details.items.filter(item => loaded.unlocked.includes(item.id)).forEach(item => {
+        const oldPlace = loaded.places?.[item.id] || {};
+        loaded.gardenItems.push({instanceId: `garden-${loaded.nextGardenId++}`, itemId: item.id, season: savedSeason,
+          x: oldPlace.x ?? item.x, y: oldPlace.y ?? item.y, rotation: 0});
+      });
+    });
+    // Clear the retired fields so an intentionally emptied garden stays empty on the next visit.
+    loaded.unlocked = [];
+    loaded.places = {};
+  }
+  return loaded;
 }
 function persist() {
   try { localStorage.setItem(STORE_KEY, JSON.stringify(save)); } catch { /* keep in memory only */ }
 }
 let save = loadSave();
+persist(); // also saves any one-time upgrade from the earlier one-of-each garden format
 const firstToday = () => save.lastDay !== today();
 function renderTokens() { $$('.token-count').forEach(el => { el.textContent = save.tokens; }); }
 
@@ -317,7 +350,7 @@ function finishSession() {
   $('#celebrateBonus').hidden = !bonus;
   $('#celebrateGrew').textContent = `Your garden grew ${'🍃'.repeat(Math.min(leaves, 8))}${leaves > 8 ? ` ×${leaves}` : ''}`;
   $('#celebrateGrew').hidden = !leaves;
-  const canAdd = SEASONS[season].items.filter(item => !save.unlocked.includes(item.id) && item.cost <= save.tokens).length;
+  const canAdd = SEASONS[season].items.filter(item => item.cost <= save.tokens).length;
   $('#celebrateCanAdd').textContent = canAdd ? `You can add ${canAdd} new thing${canAdd > 1 ? 's' : ''} to the garden` : '';
   $('#celebrateCanAdd').hidden = !canAdd;
   state.history = ['home'];
@@ -400,7 +433,61 @@ cameraToggle.addEventListener('click', () => {
 
 // ---------- Our garden ----------
 const currentSeason = () => { const month = new Date().getMonth(); return month >= 3 && month <= 8 ? 'winter' : 'summer'; };
-let season = currentSeason(), justAdded = null;
+let season = currentSeason(), justAdded = null, selectedGardenItem = null;
+let growthEffect = {instanceId: null, type: null, timer: 0};
+
+const itemDefinition = instance => SEASONS[instance.season]?.items.find(item => item.id === instance.itemId);
+const gardenItem = instanceId => save.gardenItems.find(item => item.instanceId === instanceId);
+
+function showItemTools() {
+  const instance = gardenItem(selectedGardenItem);
+  const definition = instance && itemDefinition(instance);
+  const visible = definition && instance.season === season;
+  $('#itemTools').hidden = !visible;
+  $('#growthTools').hidden = !visible || !definition.grows;
+  if (definition) {
+    $('#itemToolsName').textContent = definition.name;
+    $('#itemSizeLabel').textContent = `${Math.round((instance.size || 1) * 100)}%`;
+    if (definition.grows) {
+      const stage = instance.growthStage || 'grown';
+      const step = {
+        seed: ['Step 1 of 3', 'Your seed is ready', '🌱 Plant'],
+        planted: ['Step 2 of 3', 'Give it a gentle drink', '💧 Water'],
+        watered: ['Step 3 of 3', 'See what you grew', '🌿 Watch it Grow'],
+        grown: ['Fully grown', 'A little water makes it happy', '💧 Water']
+      }[stage];
+      $('#growthStep').textContent = step[0];
+      $('#growthPrompt').textContent = step[1];
+      $('#growthAction').textContent = step[2];
+    }
+  }
+}
+
+function selectGardenItem(instanceId) {
+  selectedGardenItem = instanceId;
+  $$('.garden-item').forEach(element => element.classList.toggle('selected', element.dataset.instance === instanceId));
+  showItemTools();
+}
+
+function renderGardenItem(item) {
+  const stage = item.grows ? (item.growthStage || 'grown') : null;
+  const effect = growthEffect.instanceId === item.instanceId ? growthEffect.type : null;
+  const selected = item.instanceId === selectedGardenItem ? ' selected' : '';
+  let itemMarkup;
+  if (item.grows && stage !== 'grown') {
+    itemMarkup = `<div class="garden-item garden-seed-stage stage-${stage}${item.instanceId === justAdded ? ' new' : ''}${selected}${effect === 'planting' ? ' just-planted' : ''}" role="button" aria-label="${item.name}, ${stage === 'seed' ? 'seed ready to plant' : stage === 'planted' ? 'planted seed ready for water' : 'sprout ready to grow'}"
+      data-instance="${item.instanceId}" tabindex="0" style="left:${item.x}%;top:${item.y}%;width:${Math.min(item.w, 9)}%;transform:rotate(${item.rotation || 0}deg) scale(${item.size || 1})"><span class="garden-soil"></span><span class="garden-seed"></span><span class="garden-sprout"></span></div>`;
+  } else {
+    itemMarkup = `<img class="garden-item${item.flying ? ' flying' : ''}${item.instanceId === justAdded ? ' new' : ''}${selected}${effect === 'growing' ? ' just-grown' : ''}${effect === 'happy' ? ' water-happy' : ''}" src="${ITEM_IMG(item.asset || item.itemId)}" alt="${item.name}"
+      data-instance="${item.instanceId}" tabindex="0" draggable="false" style="left:${item.x}%;top:${item.y}%;width:${item.w}%;transform:rotate(${item.rotation || 0}deg) scale(${item.size || 1})">`;
+  }
+  const effectWidth = item.grows && stage !== 'grown' ? Math.min(item.w, 10) : item.w;
+  const effectMarkup = effect ? `<span class="garden-effect effect-${effect}" aria-hidden="true" style="left:${item.x}%;top:${item.y}%;width:${effectWidth}%"></span>` : '';
+  const groundWidth = item.w * (item.size || 1) * .62;
+  const groundMarkup = !item.flying && (!item.grows || stage === 'grown')
+    ? `<span class="garden-ground" aria-hidden="true" style="left:${item.x}%;top:${item.y}%;width:${groundWidth}%"></span>` : '';
+  return groundMarkup + itemMarkup + effectMarkup;
+}
 
 function renderGarden() {
   const scene = $('#gardenScene');
@@ -408,16 +495,17 @@ function renderGarden() {
   $('#gardenBg').src = SEASONS[season].bg;
   scene.style.setProperty('--ratio', SEASONS[season].ratio);
   $$('[data-season]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.season === season)));
-  const owned = SEASONS[season].items.filter(item => save.unlocked.includes(item.id)).map(item => ({...item, ...save.places[item.id]}));
+  const owned = save.gardenItems.filter(instance => instance.season === season).map(instance => ({...itemDefinition(instance), ...instance}));
   $('#gardenItems').innerHTML = owned
     .sort((a, b) => a.y - b.y) // things lower in the picture sit in front
-    .map(item => `<img class="garden-item${item.flying ? ' flying' : ''}${item.id === justAdded ? ' new' : ''}" src="${ITEM_IMG(item.id)}" alt="${item.name}"
-      data-id="${item.id}" tabindex="0" draggable="false" style="left:${item.x}%;top:${item.y}%;width:${item.w}%">`).join('');
+    .map(renderGardenItem).join('');
   $('#gardenEmpty').hidden = owned.length > 0;
   $('#dragHint').hidden = !owned.length || save.movedOnce;
+  if (!owned.some(item => item.instanceId === selectedGardenItem)) selectedGardenItem = null;
+  showItemTools();
   justAdded = null;
 }
-$$('[data-season]').forEach(button => button.addEventListener('click', () => { season = button.dataset.season; renderGarden(); }));
+$$('[data-season]').forEach(button => button.addEventListener('click', () => { season = button.dataset.season; selectedGardenItem = null; renderGarden(); }));
 
 // Players arrange their own garden: press on anything and drag it. Positions are kept (as % of the picture, so they fit any screen).
 // x is the item's centre, y is where it touches the ground.
@@ -427,15 +515,41 @@ function placeItem(element, x, y) {
   element.style.left = `${place.x}%`; element.style.top = `${place.y}%`;
   return place;
 }
-function keepPlace(id, place) {
-  save.places[id] = place; save.movedOnce = true; persist();
-  renderGarden(); // re-sort so whatever is lower stands in front
+function matchBeside(instanceId, place) {
+  const instance = gardenItem(instanceId);
+  const definition = itemDefinition(instance);
+  const peers = save.gardenItems.filter(other => other.instanceId !== instanceId && other.season === season && other.itemId === instance.itemId);
+  let best = null;
+  peers.forEach(peer => [-1, 1].forEach(side => {
+    const spacing = definition.w * .82 * (((instance.size || 1) + (peer.size || 1)) / 2);
+    const target = clampPlace(peer.x + side * spacing, peer.y);
+    const distance = Math.hypot(place.x - target.x, (place.y - target.y) * 1.5);
+    if (distance <= 6 && (!best || distance < best.distance)) best = {place: target, rotation: peer.rotation || 0, distance};
+  }));
+  return best;
 }
-let dragging = null;
+function keepPlace(instanceId, place) {
+  const instance = gardenItem(instanceId);
+  const match = matchBeside(instanceId, place);
+  Object.assign(instance, match?.place || place);
+  if (match) instance.rotation = match.rotation;
+  save.movedOnce = true; persist();
+  renderGarden(); // re-sort so whatever is lower stands in front
+  if (match) toast('Matched neatly beside the other one.');
+}
+let dragging = null, pinch = null;
+const touchPoints = new Map();
+const clampSize = size => Math.round(Math.min(2, Math.max(.4, size)) * 10) / 10;
+const distanceBetween = ([a, b]) => Math.hypot(a.x - b.x, a.y - b.y);
+function displaySize(instance, element) {
+  element.style.transform = `rotate(${instance.rotation || 0}deg) scale(${instance.size || 1})`;
+  $('#itemSizeLabel').textContent = `${Math.round((instance.size || 1) * 100)}%`;
+}
 $('#gardenItems').addEventListener('pointerdown', event => {
   const element = event.target.closest('.garden-item');
   if (!element) return;
   event.preventDefault();
+  selectGardenItem(element.dataset.instance);
   const box = $('#gardenScene').getBoundingClientRect();
   dragging = {element, box, pointer: event.pointerId,
     // keep the grab point under the finger instead of jumping the item's foot to it
@@ -443,41 +557,146 @@ $('#gardenItems').addEventListener('pointerdown', event => {
     dy: parseFloat(element.style.top) - (event.clientY - box.top) / box.height * 100};
   element.setPointerCapture(event.pointerId);
   element.classList.add('lifted');
+  if (event.pointerType === 'touch') {
+    touchPoints.set(event.pointerId, {x: event.clientX, y: event.clientY, instanceId: element.dataset.instance});
+    const points = [...touchPoints.values()].filter(point => point.instanceId === element.dataset.instance);
+    if (points.length === 2) {
+      const instance = gardenItem(element.dataset.instance);
+      pinch = {instanceId: element.dataset.instance, distance: distanceBetween(points), size: instance.size || 1, element};
+      dragging = null;
+    }
+  }
 });
 $('#gardenItems').addEventListener('pointermove', event => {
+  if (touchPoints.has(event.pointerId)) {
+    const point = touchPoints.get(event.pointerId);
+    Object.assign(point, {x: event.clientX, y: event.clientY});
+    if (pinch && point.instanceId === pinch.instanceId) {
+      const points = [...touchPoints.values()].filter(other => other.instanceId === pinch.instanceId);
+      if (points.length >= 2) {
+        const instance = gardenItem(pinch.instanceId);
+        instance.size = clampSize(pinch.size * distanceBetween(points.slice(0, 2)) / pinch.distance);
+        displaySize(instance, pinch.element);
+      }
+      return;
+    }
+  }
   if (!dragging || event.pointerId !== dragging.pointer) return;
   const {element, box, dx, dy} = dragging;
   dragging.place = placeItem(element, (event.clientX - box.left) / box.width * 100 + dx, (event.clientY - box.top) / box.height * 100 + dy);
 });
 function dropItem(event) {
+  if (touchPoints.has(event.pointerId)) touchPoints.delete(event.pointerId);
+  if (pinch) {
+    pinch.element.classList.remove('lifted');
+    pinch = null; dragging = null; touchPoints.clear();
+    save.movedOnce = true; persist(); renderGarden();
+    return;
+  }
   if (!dragging || event.pointerId !== dragging.pointer) return;
   const {element, place} = dragging;
   dragging = null;
   element.classList.remove('lifted');
-  if (place) keepPlace(element.dataset.id, place);
+  if (place) keepPlace(element.dataset.instance, place);
 }
 $('#gardenItems').addEventListener('pointerup', dropItem);
 $('#gardenItems').addEventListener('pointercancel', dropItem);
+$('#gardenScene').addEventListener('pointerdown', event => {
+  if (!event.target.closest('.garden-item, .item-tools, .growth-tools')) selectGardenItem(null);
+});
+$('#gardenItems').addEventListener('focusin', event => {
+  const element = event.target.closest('.garden-item');
+  if (element) selectGardenItem(element.dataset.instance);
+});
 // Keyboard: focus an item and nudge it with the arrow keys.
 $('#gardenItems').addEventListener('keydown', event => {
   const element = event.target.closest('.garden-item');
+  if (!element) return;
+  if (event.key.toLowerCase() === 'r') {
+    event.preventDefault(); selectGardenItem(element.dataset.instance); $('#rotateItem').click(); return;
+  }
+  if (event.key === '+' || event.key === '=') {
+    event.preventDefault(); selectGardenItem(element.dataset.instance); $('#largerItem').click(); return;
+  }
+  if (event.key === '-' || event.key === '_') {
+    event.preventDefault(); selectGardenItem(element.dataset.instance); $('#smallerItem').click(); return;
+  }
+  if (event.key === 'Delete' || event.key === 'Backspace') {
+    event.preventDefault(); selectGardenItem(element.dataset.instance); $('#deleteItem').click(); return;
+  }
   const step = {ArrowLeft: [-2, 0], ArrowRight: [2, 0], ArrowUp: [0, -2], ArrowDown: [0, 2]}[event.key];
-  if (!element || !step) return;
+  if (!step) return;
   event.preventDefault();
   const place = placeItem(element, parseFloat(element.style.left) + step[0], parseFloat(element.style.top) + step[1]);
-  keepPlace(element.dataset.id, place);
-  $(`.garden-item[data-id="${element.dataset.id}"]`)?.focus();
+  keepPlace(element.dataset.instance, place);
+  $(`.garden-item[data-instance="${element.dataset.instance}"]`)?.focus();
+});
+
+$('#rotateItem').addEventListener('click', () => {
+  const instance = gardenItem(selectedGardenItem);
+  if (!instance) return;
+  instance.rotation = ((instance.rotation || 0) + 45) % 360;
+  persist(); renderGarden();
+  $(`.garden-item[data-instance="${instance.instanceId}"]`)?.focus();
+});
+function resizeSelected(change) {
+  const instance = gardenItem(selectedGardenItem);
+  if (!instance) return;
+  instance.size = clampSize((instance.size || 1) + change);
+  persist(); renderGarden();
+  $(`.garden-item[data-instance="${instance.instanceId}"]`)?.focus();
+}
+$('#smallerItem').addEventListener('click', () => resizeSelected(-.1));
+$('#largerItem').addEventListener('click', () => resizeSelected(.1));
+function showGrowthEffect(instanceId, type, duration = 1100) {
+  clearTimeout(growthEffect.timer);
+  growthEffect = {instanceId, type, timer: 0};
+  renderGarden();
+  growthEffect.timer = setTimeout(() => {
+    if (growthEffect.instanceId === instanceId) {
+      growthEffect = {instanceId: null, type: null, timer: 0};
+      renderGarden();
+    }
+  }, duration);
+}
+$('#growthAction').addEventListener('click', () => {
+  const instance = gardenItem(selectedGardenItem);
+  const definition = instance && itemDefinition(instance);
+  if (!definition?.grows) return;
+  const stage = instance.growthStage || 'grown';
+  if (stage === 'seed') {
+    instance.growthStage = 'planted'; persist(); showGrowthEffect(instance.instanceId, 'planting');
+    toast('Seed planted.');
+  } else if (stage === 'planted') {
+    instance.growthStage = 'watered'; persist(); showGrowthEffect(instance.instanceId, 'watering');
+    toast('Gently watered.');
+  } else if (stage === 'watered') {
+    instance.growthStage = 'grown'; persist(); showGrowthEffect(instance.instanceId, 'growing', 1400);
+    toast(`${definition.name} grew!`);
+  } else {
+    showGrowthEffect(instance.instanceId, 'happy');
+  }
+});
+$('#deleteItem').addEventListener('click', () => {
+  const index = save.gardenItems.findIndex(item => item.instanceId === selectedGardenItem);
+  if (index < 0) return;
+  const [removed] = save.gardenItems.splice(index, 1);
+  const definition = itemDefinition(removed);
+  save.tokens += definition.cost; // deletion is fully reversible: buying it again costs the same amount
+  selectedGardenItem = null;
+  persist(); renderTokens(); renderGarden();
+  toast(`${definition.name} removed — ${definition.cost} 🌱 returned.`);
 });
 
 // ---------- Add to garden (token page) ----------
 function renderShop() {
   $('#shopGrid').innerHTML = SEASONS[season].items.map(item => {
-    const owned = save.unlocked.includes(item.id);
-    const short = !owned && save.tokens < item.cost;
-    return `<button class="btn btn-secondary shop-item${owned ? ' owned' : ''}${short ? ' locked' : ''}" data-item="${item.id}" ${owned ? 'aria-disabled="true"' : ''}>
-      <img class="shop-art" src="${ITEM_IMG(item.id)}" alt="">
+    const count = save.gardenItems.filter(instance => instance.season === season && instance.itemId === item.id).length;
+    const short = save.tokens < item.cost;
+    return `<button class="btn btn-secondary shop-item${count ? ' owned' : ''}${short ? ' locked' : ''}" data-item="${item.id}">
+      <img class="shop-art" src="${ITEM_IMG(item.asset || item.id)}" alt="" loading="lazy" decoding="async">
       <b>${item.name}</b>
-      <span class="shop-cost">${owned ? '✓ In garden' : `${short ? '🔒' : '🌱'} ${item.cost}`}</span>
+      <span class="shop-cost">${short ? '🔒' : '🌱'} ${item.cost}${count ? ` · ${count} in garden` : ''}</span>
     </button>`;
   }).join('');
 }
@@ -485,12 +704,20 @@ $('#shopGrid').addEventListener('click', event => {
   const button = event.target.closest('[data-item]');
   if (!button) return;
   const item = SEASONS[season].items.find(entry => entry.id === button.dataset.item);
-  if (save.unlocked.includes(item.id)) return;
   if (save.tokens < item.cost) { toast(`${item.cost - save.tokens} more 🌱 needed — play a song!`); return; }
   save.tokens -= item.cost;
-  save.unlocked.push(item.id);
+  const same = save.gardenItems.filter(instance => instance.season === season && instance.itemId === item.id);
+  // A small repeat pattern avoids rows of identical clones while keeping every new item easy to find and move.
+  const variations = [[0, 0, 1], [.82, -1.5, .9], [-.76, 2, 1.1], [.34, 5, 1.1], [-.28, -5, .9], [1.24, 3, 1], [-1.18, -2.5, 1.1], [.66, 7, .9]];
+  const [xFactor, dy, size] = variations[same.length % variations.length];
+  const dx = item.w * xFactor;
+  const place = clampPlace(item.x + dx, item.y + dy);
+  const instance = {instanceId: `garden-${save.nextGardenId++}`, itemId: item.id, season, ...place, rotation: 0, size,
+    ...(item.grows ? {growthStage: 'seed'} : {})};
+  save.gardenItems.push(instance);
   persist();
-  justAdded = item.id;
+  justAdded = instance.instanceId;
+  selectedGardenItem = instance.instanceId;
   state.history = state.history.filter(name => name !== 'garden');
   showScreen('garden');
   toast(`${item.name} added!`);
